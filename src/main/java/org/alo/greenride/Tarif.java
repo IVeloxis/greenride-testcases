@@ -15,9 +15,13 @@ public class Tarif {
      * @throws IllegalArgumentException wenn tage kleiner als 1 oder groesser als 7 ist
      */
     public int berechneMietpreis(int tage) {
-        if (tage >= 3) {
+        // Guard
+        if (tage >= 3 && tage <= 7) {
             return tage * 9;
         }
-        return tage * 10;
+        else if (tage >= 1 && tage <= 2) {
+            return tage * 10;
+        }
+        return 0;
     }
 }

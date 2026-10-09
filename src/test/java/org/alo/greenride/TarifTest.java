@@ -15,21 +15,18 @@ public class TarifTest {
     @Test
     public void testTarif0Tage() {
         Tarif tarif = new Tarif();
-        int Preis = tarif.berechneMietpreis(0);
-        assertEquals(0, Preis);
+        assertThrows(IllegalArgumentException.class, () -> tarif.berechneMietpreis(0));
     }
 
     @Test
     public void negativwirdabgelehnt() {
         Tarif tarif = new Tarif();
-        int Preis = tarif.berechneMietpreis(-10);
-        assertEquals(0, Preis);
+        assertThrows(IllegalArgumentException.class, () -> tarif.berechneMietpreis(-10));
     }
 
     @Test
     public void uebersieben() {
         Tarif tarif = new Tarif();
-        int Preis = tarif.berechneMietpreis(10);
-        assertEquals(0, Preis);
+        assertThrows(IllegalArgumentException.class, () -> tarif.berechneMietpreis(10));
     }
 }

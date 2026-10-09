@@ -16,11 +16,12 @@ public class Tarif {
      */
     public int berechneMietpreis(int tage) {
         // Guard
-        if (tage >= 3 && tage <= 7) {
-            return tage * 9;
+        if (tage > 7 || tage <= 0) {
+            throw new IllegalArgumentException();
         }
-        else if (tage >= 1 && tage <= 2) {
-            return tage * 10;
+        else {
+            if (tage >= 3) return tage * 9;
+            if (tage <= 2) return tage * 10;
         }
         return 0;
     }

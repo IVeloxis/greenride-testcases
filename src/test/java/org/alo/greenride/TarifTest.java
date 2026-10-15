@@ -29,4 +29,32 @@ public class TarifTest {
         Tarif tarif = new Tarif();
         assertThrows(IllegalArgumentException.class, () -> tarif.berechneMietpreis(10));
     }
+
+    @Test
+    public void LastenradHelm() {
+        Tarif tarif = new Tarif();
+        int SGebuehr = tarif.berechneStartgebuehr(true, true);
+        assertEquals(5, SGebuehr);
+    }
+
+    @Test
+    public void Lastenrad() {
+        Tarif tarif = new Tarif();
+        int SGebuehr = tarif.berechneStartgebuehr(true, false);
+        assertEquals(4, SGebuehr);
+    }
+
+    @Test
+    public void Helm() {
+        Tarif tarif = new Tarif();
+        int SGebuehr = tarif.berechneStartgebuehr(false, true);
+        assertEquals(3, SGebuehr);
+    }
+
+    @Test
+    public void LastenradHelmNegativ() {
+        Tarif tarif = new Tarif();
+        int SGebuehr = tarif.berechneStartgebuehr(false, false);
+        assertEquals(2, SGebuehr);
+    }
 }

@@ -56,7 +56,7 @@ public class Station {
                 return Optional.of(f);
             }
         }
-        return Optional.empty();
+        throw new IllegalArgumentException();
     }
 
     /**

@@ -3,7 +3,7 @@ package org.alo.greenride;
 /**
  * Der Mehrtagestarif von GreenRide (gilt ab 01.11.).
  */
-public class Tarif {
+public class Standardtarif implements Tarifmodell {
 
     /**
      * Berechnet den Mietpreis fuer eine Ausleihe ueber mehrere Tage.

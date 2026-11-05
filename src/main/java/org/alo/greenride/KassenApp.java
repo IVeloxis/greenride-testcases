@@ -18,6 +18,13 @@ public class KassenApp {
         rueckgabeBuchen(warschauer, "GR-014");
         rueckgabeBuchen(warschauer, "GR-041");   // vertippt: 41 statt 14
         rueckgabeBuchen(warschauer, "GR-002");
+
+        Kasse kasse = new Kasse();
+        Tarifmodell standard = new Standardtarif();
+        Tarifmodell student = new Studententarif();
+        System.out.println(kasse.kassieren(standard, 2));
+        System.out.println(kasse.kassieren(student, 2));
+        System.out.println(kasse.kassieren(standard, 5));
     }
 
     static void rueckgabeBuchen(Station station, String kennung) {

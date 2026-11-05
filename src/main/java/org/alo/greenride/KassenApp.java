@@ -16,7 +16,7 @@ public class KassenApp {
         warschauer.fahrradAufnehmen(new Fahrrad("GR-014", "Lastenrad", 24.00));
 
         rueckgabeBuchen(warschauer, "GR-014");
-        rueckgabeBuchen(warschauer, "GR-041");   // vertippt: 41 statt 14
+        rueckgabeBuchen(warschauer, "GR-014");   // vertippt: 41 statt 14
         rueckgabeBuchen(warschauer, "GR-002");
 
         Kasse kasse = new Kasse();

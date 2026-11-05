@@ -30,8 +30,13 @@ public class Station {
      */
     public void fahrradAufnehmen(Fahrrad fahrrad) {
         // Zusage aus @throws noch nicht umgesetzt - kommt nach dem Test (Red/Green)
+        if (this.fahrraeder.contains(fahrrad)) {}
         fahrraeder.add(fahrrad);
         fahrrad.setStation(this);
+    }
+
+    public int getAnzahlFahrraeder() {
+        return fahrraeder.size();
     }
 
     public void fahrraederAusgeben() {

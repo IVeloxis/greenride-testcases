@@ -30,9 +30,19 @@ public class Station {
      */
     public void fahrradAufnehmen(Fahrrad fahrrad) {
         // Zusage aus @throws noch nicht umgesetzt - kommt nach dem Test (Red/Green)
-        if (this.fahrraeder.contains(fahrrad)) {}
-        fahrraeder.add(fahrrad);
-        fahrrad.setStation(this);
+        int s = fahrraeder.size();
+        for (int i = 0; i < s; i++) {
+            if (fahrraeder.get(i).getKennung() == fahrrad.getKennung()) {
+                throw new IllegalArgumentException();
+            }
+        }
+
+        if (fahrrad == null) {
+            throw new IllegalArgumentException();
+        } else {
+            fahrraeder.add(fahrrad);
+            fahrrad.setStation(this);
+        }
     }
 
     public int getAnzahlFahrraeder() {
@@ -84,5 +94,5 @@ public class Station {
     public String getName()    { return name; }
     public String getAdresse() { return adresse; }
 
-    public List<Fahrrad> getFahrraeder() { return fahrraeder; }
+    public List<Fahrrad> getFahrraeder() { return List.copyOf(fahrraeder); }
 }
